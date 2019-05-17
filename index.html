@@ -10,18 +10,21 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
     <title>Salary Calculator</title>
 </head>
+
 <header>
     <h1>Salary Calculator</h1>
 </header>
 
 <body>
     <h2>Add Employee</h2>
-    <input type="text" placeholder="First Name" id="firstName">
-    <input type="text" placeholder="Last Name" id="lastName">
-    <input type="number" placeholder="ID" id="idNumber">
-    <input type="text" placeholder="Title" id="firstName">
-    <input type="text" placeholder="Annual Salary" id="annualSalary">
+
+    <input type="text" placeholder="First Name" id="inputFirstName">
+    <input type="text" placeholder="Last Name" id="inputLastName">
+    <input type="number" placeholder="ID" id="inputIdNumber">
+    <input type="text" placeholder="Title" id="inputTitle">
+    <input type="number" placeholder="Annual Salary" id="InputAnnualSalary">
     <button id="submitButton">Submit</button>
+
     <table>
         <thead>
             <tr>
@@ -33,7 +36,7 @@
                 <th>Delete</th>
             </tr>
         </thead>
-        <tbody id="employeeInfo">
+        <tbody id="employeeInfoTable">
         </tbody>
         <tfoot>
         </tfoot>
