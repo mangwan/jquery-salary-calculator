@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +13,31 @@
 <header>
     <h1>Salary Calculator</h1>
 </header>
-<h2>Add Employee</h2>
-<input type="text" placeholder="First Name" id="firstName">
-<input type="text" placeholder="Last Name" id="lastName">
-<input type="number" placeholder="ID" id="idNumber">
-<input type="text" placeholder="Title" id="firstName">
-<input type="text" placeholder="Annual Salary" id="annualSalary">
+
 <body>
-    
+    <h2>Add Employee</h2>
+    <input type="text" placeholder="First Name" id="firstName">
+    <input type="text" placeholder="Last Name" id="lastName">
+    <input type="number" placeholder="ID" id="idNumber">
+    <input type="text" placeholder="Title" id="firstName">
+    <input type="text" placeholder="Annual Salary" id="annualSalary">
+    <button id="submitButton">Submit</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Fist Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="employeeInfo">
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
 </body>
+
 </html>
