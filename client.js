@@ -46,4 +46,5 @@ $('#InputAnnualSalary').val('');
 
 function handleDeleteClick() {
  console.log('in deleteClick');
+ $(this).closest('tr').remove();
 }
