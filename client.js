@@ -26,14 +26,19 @@ function handleAddClick() {
     let newAnnualSalary = $('#InputAnnualSalary').val();
 
 $('#employeeInfoTable').append(
-`<tr>
+`<tr>add
     <td>` + newfirstName + `</td>
     <td>` + newlastName + `</td>
     <td>` + newId + `</td>
     <td>` + newTitle + `</td>
     <td>` + newAnnualSalary + `</td>
     <td><button class="deleteButton">Delete</button></td>
-</tr>`
+</tr>`);
 
-);
+$('#inputFirstName').val('');
+$('#inputLastName').val('');
+$('#inputIdNumber').val('');
+$('#inputTitle').val('');
+$('#InputAnnualSalary').val('');
+
 }
