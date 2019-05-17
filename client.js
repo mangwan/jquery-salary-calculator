@@ -1,14 +1,14 @@
 console.log('in js');
 
-// let employeeInfo = [
-//     {
-//     firstName: '',
-//     lastName: '',
-//     id: '',
-//     title: '',
-//     annualSalary: ''
-//     }
-// ];
+let employeeInfo = [
+    {
+    firstName: '',
+    lastName: '',
+    id: '',
+    title: '',
+    annualSalary: ''
+}
+];
 
 $(document).ready(onReady);
 
@@ -20,19 +20,24 @@ $('#employeeInfoTable').on('click', '.deleteButton', handleDeleteClick);
 
 function handleAddClick() {
     console.log('in handAddClick');
-    let newFirstName = $('#inputFirstName').val();
-    let newLastName = $('#inputLastName').val();
-    let newId = $('#inputIdNumber').val();
-    let newTitle = $('#inputTitle').val();
-    let newAnnualSalary = $('#InputAnnualSalary').val();
+
+let newEmployeeInfo = {
+    firstName: $('#inputFirstName').val(),
+    lastName: $('#inputLastName').val(),
+    id: $('#inputIdNumber').val(),
+    title: $('#inputTitle').val(),
+    annualSalary: $('#InputAnnualSalary').val()
+}
+
+employeeInfo.push(newEmployeeInfo);
 
 $('#employeeInfoTable').append(
 `<tr>add
-    <td>` + newFirstName + `</td>
-    <td>` + newLastName + `</td>
-    <td>` + newId + `</td>
-    <td>` + newTitle + `</td>
-    <td>` + newAnnualSalary + `</td>
+    <td>` + newEmployeeInfo.firstName + `</td>
+    <td>` + newEmployeeInfo.lastName + `</td>
+    <td>` + newEmployeeInfo.id + `</td>
+    <td>` + newEmployeeInfo.title + `</td>
+    <td>` + newEmployeeInfo.annualSalary + `</td>
     <td><button class="deleteButton">Delete</button></td>
 </tr>`);
 
@@ -42,7 +47,23 @@ $('#inputIdNumber').val('');
 $('#inputTitle').val('');
 $('#InputAnnualSalary').val('');
 
+calculateMonthlySalary()
 }
+
+function calculateMonthlySalary(){
+console.log('in calculateMonthlySalary');
+let totalMonthlySalary = 0;
+for (let i = 0; i < employeeInfo.length; i++){
+    totalMonthlySalary += Number( employeeInfo[i].InputAnnualSalary);
+}
+console.log('totalMonthySalary:', totalMonthlySalary);
+const avgMonthlySalary = Number(totalMonthlySalary)/12;
+let el = $('#totalMonthyDisplay');
+el.empty();
+el.append
+
+}
+
 
 function handleDeleteClick() {
  console.log('in deleteClick');
