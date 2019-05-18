@@ -20,7 +20,6 @@ $('#employeeInfoTable').on('click', '.deleteButton', handleDeleteClick);
 
 function handleAddClick() {
     console.log('in handAddClick');
-
 let newEmployeeInfo = {
     firstName: $('#inputFirstName').val(),
     lastName: $('#inputLastName').val(),
@@ -28,9 +27,7 @@ let newEmployeeInfo = {
     title: $('#inputTitle').val(),
     annualSalary: $('#InputAnnualSalary').val()
 }
-
 employeeInfo.push(newEmployeeInfo);
-
 $('#employeeInfoTable').append(
 `<tr>add
     <td>` + newEmployeeInfo.firstName + `</td>
@@ -40,28 +37,27 @@ $('#employeeInfoTable').append(
     <td>` + newEmployeeInfo.annualSalary + `</td>
     <td><button class="deleteButton">Delete</button></td>
 </tr>`);
-
 $('#inputFirstName').val('');
 $('#inputLastName').val('');
 $('#inputIdNumber').val('');
 $('#inputTitle').val('');
 $('#InputAnnualSalary').val('');
-
-calculateMonthlySalary()
+calculateTotalMonthly();
+displayTotalMonthly();
 }
 
-function calculateMonthlySalary(){
-console.log('in calculateMonthlySalary');
-let totalMonthlySalary = 0;
+function calculateTotalMonthly(){
+let totalYearlySalary = 0;
 for (let i = 0; i < employeeInfo.length; i++){
-    totalMonthlySalary += Number( employeeInfo[i].InputAnnualSalary);
+    totalYearlySalary += Number( employeeInfo[i].annualSalary);
 }
-console.log('totalMonthySalary:', totalMonthlySalary);
-const avgMonthlySalary = Number(totalMonthlySalary)/12;
-let el = $('#totalMonthyDisplay');
-el.empty();
-el.append
+let months = 12;
+const MonthlySalary = Number(totalYearlySalary)/Number(months);
+console.log('Total Monthly:', MonthlySalary);
+}
 
+function displayTotalMonthly() {
+    console.log('in displayTotalMonthly');
 }
 
 
