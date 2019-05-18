@@ -10,6 +10,12 @@ let employeeInfo = [
     }
 ];
 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2
+  })
+
 $(document).ready(onReady);
 
 function onReady() {
@@ -34,7 +40,7 @@ function handleAddClick() {
     <td>` + newEmployeeInfo.lastName + `</td>
     <td>` + newEmployeeInfo.id + `</td>
     <td>` + newEmployeeInfo.title + `</td>
-    <td>` + newEmployeeInfo.annualSalary + `</td>
+    <td>` + formatter.format(newEmployeeInfo.annualSalary) + `</td>
     <td><button class="deleteButton">Delete</button></td>
 </tr>`);
     $('#inputFirstName').val('');
@@ -53,11 +59,9 @@ function calculateTotalMonthly() {
     let months = 12;
     let monthlySalary = Number(totalYearlySalary) / Number(months);
     console.log('Total Monthly:', monthlySalary);
-    let el = $('#monthlyDisplayOut');
-    el.empty();
-    el.text(monthlySalary);
-    if(monthlySalary >= $20000){
-        $('#monthlyDisplayOut').css('color', 'red'); 
+    $('#monthlyDisplayOut').text('$' + formatter.format(monthlySalary));
+    if (monthlySalary >= 20000) {
+        $('#monthlyDisplayOut').css('color', 'red');
     }
 }
 
