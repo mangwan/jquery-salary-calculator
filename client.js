@@ -21,7 +21,7 @@ $(document).ready(onReady);
 function onReady() {
     //on click collect information from input field
     $('#submitButton').on('click', handleAddClick);
-    $('#employeeInfoTable').on('click', '.deleteButton', handleDeleteClick);
+    $('#employeeInfoTable').on('click', '#deleteButton', handleDeleteClick);
 }
 
 function handleAddClick() {
@@ -31,17 +31,17 @@ function handleAddClick() {
         lastName: $('#inputLastName').val(),
         id: $('#inputIdNumber').val(),
         title: $('#inputTitle').val(),
-        annualSalary: $('#InputAnnualSalary').val()
+        annualSalary: $('#inputAnnualSalary').val()
     }
     employeeInfo.push(newEmployeeInfo);
     $('#employeeInfoTable').append(
         `<tr>add
-    <td>` + newEmployeeInfo.firstName + `</td>
-    <td>` + newEmployeeInfo.lastName + `</td>
-    <td>` + newEmployeeInfo.id + `</td>
-    <td>` + newEmployeeInfo.title + `</td>
-    <td>` + formatter.format(newEmployeeInfo.annualSalary) + `</td>
-    <td><button class="deleteButton">Delete</button></td>
+    <td align="left">` + newEmployeeInfo.firstName + `</td>
+    <td align="left">` + newEmployeeInfo.lastName + `</td>
+    <td align="center">` + newEmployeeInfo.id + `</td>
+    <td align="center">` + newEmployeeInfo.title + `</td>
+    <td align="center">` + formatter.format(newEmployeeInfo.annualSalary) + `</td>
+    <td align="center"><button id="deleteButton">Delete</button></td>
 </tr>`);
     $('#inputFirstName').val('');
     $('#inputLastName').val('');
@@ -59,7 +59,7 @@ function calculateTotalMonthly() {
     let months = 12;
     let monthlySalary = Number(totalYearlySalary) / Number(months);
     console.log('Total Monthly:', monthlySalary);
-    $('#monthlyDisplayOut').text('$' + formatter.format(monthlySalary));
+    $('#monthlyDisplayOut').text(formatter.format(monthlySalary));
     if (monthlySalary >= 20000) {
         $('#monthlyDisplayOut').css('color', 'red');
     }

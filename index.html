@@ -16,16 +16,16 @@
 </header>
 
 <body>
-    <h2>Add Employee</h2>
-
-    <input type="text" placeholder="First Name" id="inputFirstName">
-    <input type="text" placeholder="Last Name" id="inputLastName">
-    <input type="number" placeholder="ID" id="inputIdNumber">
-    <input type="text" placeholder="Title" id="inputTitle">
-    <input type="number" placeholder="Annual Salary" id="InputAnnualSalary">
-    <button id="submitButton">Submit</button>
-
-    <table>
+    <h2 id="addEmployee">Add Employee</h2>
+    <div id="inputSection">
+        <input type="text" placeholder="First Name" id="inputFirstName">
+        <input type="text" placeholder="Last Name" id="inputLastName">
+        <input type="number" placeholder="ID" id="inputIdNumber">
+        <input type="text" placeholder="Title" id="inputTitle">
+        <input type="number" placeholder="Annual Salary" id="inputAnnualSalary">
+        <button id="submitButton">Submit</button>
+    </div>
+    <table cellpadding="10">
         <thead>
             <tr>
                 <th>Fist Name</th>
@@ -38,10 +38,11 @@
         </thead>
         <tbody id="employeeInfoTable">
         </tbody>
-        <tfoot>
+        <tfoot><span>
+        </span>
         </tfoot>
     </table>
-    <h2>Total Monthy: <span id="monthlyDisplayOut">$0</span></h2>
+    <h3 id="totalMonthly">Total Monthy: <span id="monthlyDisplayOut">$0.00</span></h3>
 </body>
 
 </html>

@@ -1,0 +1,87 @@
+#submitButton {
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    color:#005e54;
+  }
+
+  #submitButton:hover {
+    background-color:#CEF071;
+    color: #FAFAFA;
+  }
+
+h1 {
+    background: #005e54;
+    padding: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#inputSection {
+    padding: 0px 0px 20px 0px;
+}
+
+#inputFirstName {
+    width: 16%;
+    padding: 6px 10px;
+}
+
+#inputLastName {
+    width: 16%;
+    padding: 6px 10px;
+}
+
+#inputIdNumber {
+    width: 16%;
+    padding: 6px 10px;
+}
+
+#inputTitle {
+    width: 16%;
+    padding: 6px 10px;
+}
+
+#inputAnnualSalary {
+    width: 16%;
+    padding: 6px 10px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table, thead, tr, td, th, tbody, tfoot {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+}
+
+thead {
+    background: #CBCEC6;
+}
+
+tr {
+    height: 40px;
+}
+
+/* tr:first-child {
+    background: #FF0;
+} */
+
+tr:nth-child(2n+2){
+    background: #f5f9ed;
+}
+
+tfoot {
+    background: #CBCEC6;
+    padding: 20px;
+}
+
+#totalMonthly {
+    text-align: right;
+}
