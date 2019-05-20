@@ -14,16 +14,19 @@ const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2
-  })
+})
 
 $(document).ready(onReady);
 
 function onReady() {
-    //on click collect information from input field
     $('#submitButton').on('click', handleAddClick);
     $('#employeeInfoTable').on('click', '#deleteButton', handleDeleteClick);
 }
 
+/*When the submit button is clicked, handleAddClick funtion will grab the input values,
+ push the input values into the empoloyeeInfo array,
+ empty the input fields,
+ then calculate the total monthly value.*/
 function handleAddClick() {
     console.log('in handAddClick');
     let newEmployeeInfo = {
@@ -36,13 +39,13 @@ function handleAddClick() {
     employeeInfo.push(newEmployeeInfo);
     $('#employeeInfoTable').append(
         `<tr>add
-    <td align="left">` + newEmployeeInfo.firstName + `</td>
-    <td align="left">` + newEmployeeInfo.lastName + `</td>
-    <td align="center">` + newEmployeeInfo.id + `</td>
-    <td align="center">` + newEmployeeInfo.title + `</td>
-    <td align="center">` + formatter.format(newEmployeeInfo.annualSalary) + `</td>
-    <td align="center"><button id="deleteButton">Delete</button></td>
-</tr>`);
+            <td align="left">` + newEmployeeInfo.firstName + `</td>
+            <td align="left">` + newEmployeeInfo.lastName + `</td>
+            <td align="center">` + newEmployeeInfo.id + `</td>
+            <td align="center">` + newEmployeeInfo.title + `</td>
+            <td align="center">` + formatter.format(newEmployeeInfo.annualSalary) + `</td>
+            <td align="center"><button id="deleteButton">Delete</button></td>
+        </tr>`);
     $('#inputFirstName').val('');
     $('#inputLastName').val('');
     $('#inputIdNumber').val('');
@@ -51,6 +54,7 @@ function handleAddClick() {
     calculateTotalMonthly();
 }
 
+//calculate the total monthly value and display it on the DOM
 function calculateTotalMonthly() {
     let totalYearlySalary = 0;
     for (let i = 0; i < employeeInfo.length; i++) {
